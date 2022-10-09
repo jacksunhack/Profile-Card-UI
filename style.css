@@ -1,8 +1,10 @@
+@import url("https://fonts.googleapis.com/css?family=Quicksand:400,500,700&subset=latin-ext");
+
 * {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    font-family: sans-serif;
+    font-family: "Quicksand", sans-serif;
 }
 
 body {
@@ -11,21 +13,30 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    color: #444;
+    margin: 0;
+    font-size: 18px;
+    padding: auto 20px;
+    background: linear-gradient(-20deg, #F24, #64F)
 }
 
 .card {
     position: relative;
     width: 350px;
     height: 260px;
-    background: #fff;
-    border-radius: 20px;
-    box-shadow: 0 35px 75px rgb(0,0,0, .15);
+    /* background: rgb(161, 159, 159); */
+    background: linear-gradient(45deg, #f3e7bf, #fced65);
+    backdrop-filter: blur(15px);
+    border-radius: 56px;
+    box-shadow: 0 35px 75px rgb(0, 0, 0, .15);
     transition: .5s;
+    opacity: 0.33;
 }
 
 .card:hover {
     height: 650px;
     width: 500px;
+    opacity: 0.99;
 }
 
 .card .imgBx {
@@ -33,13 +44,18 @@ body {
     top: -50px;
     left: 50%;
     transform: translateX(-50%);
-    width: 150px;
-    height: 150px;
+    width: 120px;
+    height: 120px;
     background-color: #fff;
-    border-radius: 20px;
-    box-shadow: 0 15px 50px rgb(0,0,0, .35);
+    /* border-radius: 20px; */
+    box-shadow: 0 15px 50px rgb(0, 0, 0, .35);
     overflow: hidden;
     transition: .5s;
+
+    border-radius: 50%;
+    box-shadow: 0 5px 50px 0 #64F,
+        0 0 0 7px #64F8;
+    transition: all .5s;
 }
 
 .card:hover .imgBx {
@@ -67,12 +83,27 @@ body {
     overflow: hidden;
 }
 
-.card .content .details {
-    padding: 40px;
+.name {
+    font-weight: 700;
+    font-size: 30px;
+    color: #64F;
+    margin-bottom: 15px;
+}
+
+.txt {
+    font-weight: 500;
+    font-size: 18px;
+    margin-bottom: 15px;
+    margin-top: 7px;
+    overflow: hidden;
+}
+
+.card .content .details{
+    padding: 60px;
     width: 100%;
     transition: .5s;
     text-align: center;
-    transform: translateY(150px);
+    transform: translateY(300px);
     transform: .5s;
 }
 
@@ -92,8 +123,11 @@ body {
     color: #666;
 }
 
+
+
+
 .card .content .details .data {
-    margin: 20px 0;
+    margin: 8px 0;
     display: flex;
     justify-content: space-between;
 }
@@ -109,15 +143,20 @@ body {
     font-size: .8em;
     color: #666;
     text-transform: capitalize;
+    font-family: "Quicksand", sans-serif;
 }
 
 .card .content .details .profile-card__social {
     margin: 25px 0;
     display: flex;
-    justify-content: space-between; 
+    justify-content: space-between;
     overflow: hidden;
     position: relative;
     object-fit: cover;
+    transition: all 300ms
+}
+a:hover {
+    transform: scale(1.2);
 }
 
 /* .card:hover .content .details .profile-card__social a {
@@ -139,10 +178,12 @@ body {
     color: #fff;
     padding: 10px 30px;
     border-radius: 5px;
+    font-family: "Quicksand", sans-serif;
     border: none;
     outline: none;
     font-size: 1em;
     cursor: pointer;
+    transition: all 300ms
 }
 
 .card .content .details .btns button:last-child {
@@ -151,3 +192,10 @@ body {
     border: 1px solid #3078a1;
 }
 
+button:hover {
+    transform: translateY(-5px);
+  }
+
+.like:hover {
+    transform: translateY(-5px);
+}
